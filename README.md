@@ -67,7 +67,8 @@ Maven生命周期就是为了对所有的构建过程进行抽象和统一。
 3. Site： 生成项目报告，站点，发布站点。 
 
 ## maven插件
-1. 默认插件
+1. 默认插件  
+
 | plugin | function | life cycle phase |
 | ------ | ------ | ------ |
 | maven-clean-plugin | 清理target文件 | clean |
