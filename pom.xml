@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.deppon.uap</groupId>
+    <artifactId>uap-parent</artifactId>
+    <version>1.0.0</version>
+    <modules>
+        <module>uap-framework</module>
+        <module>uap-menu</module>
+        <module>uap-log</module>
+        <module>uap-custom</module>
+        <module>uap-admin</module>
+        <module>uap-message</module>
+        <module>uap-page</module>
+        <module>uap-selfhelp</module>
+        <module>uap-index</module>
+        <module>uap-workbench</module>
+        <module>uap-provide</module>
+    </modules>
+    <packaging>pom</packaging>
+    <properties>
+        <!-- Dependency Versions -->
+        <slf4j.version>1.7.24</slf4j.version>
+        <logback-ext-spring.version>0.1.4</logback-ext-spring.version>
+        <logback.version>1.2.1</logback.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <commons-collections4.version>4.1</commons-collections4.version>
+        <commons-io.version>2.5</commons-io.version>
+        <commons-codec.version>1.10</commons-codec.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
+        <commons-net.version>3.6</commons-net.version>
+        <joda-time.version>2.9.9</joda-time.version>
+        <guava.version>19.0</guava.version>
+        <aspectj.version>1.8.10</aspectj.version>
+        <spring.version>4.2.9.RELEASE</spring.version>
+        <spring-data-redis.version>1.6.6.RELEASE</spring-data-redis.version>
+        <spring-session.version>1.3.1.RELEASE</spring-session.version>
+        <jackson.version>2.8.11</jackson.version>
+        <fastjson.version>1.2.31</fastjson.version>
+        <httpclient.version>4.5.3</httpclient.version>
+        <httpcore.version>4.4.6</httpcore.version>
+        <zookeeper.version>3.4.9</zookeeper.version>
+        <zkclient.version>0.10</zkclient.version>
+        <curator.version>2.9.1</curator.version>
+        <dubbo.version>2.8.4</dubbo.version>
+        <quartz.version>2.2.3</quartz.version>
+        <jedis.version>2.8.2</jedis.version>
+        <jodis.version>0.2.2</jodis.version>
+        <redisson.version>3.3.2</redisson.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <axis.version>1.4</axis.version>
+        <cas.client.version>3.4.2</cas.client.version>
+        <mysql.version>5.1.41</mysql.version>
+        <mybatis.version>3.4.2</mybatis.version>
+        <mybatis-spring.version>1.3.1</mybatis-spring.version>
+        <servlet-api.version>3.1.0</servlet-api.version>
+        <jsp-api.version>2.3.1</jsp-api.version>
+        <jstl.version>1.2</jstl.version>
+        <mockito.version>1.10.19</mockito.version>
+        <junit.version>4.12</junit.version>
+        <poi.version>3.9</poi.version>
+        <mq.version>1.0.4</mq.version>
+        <utils.version>1.0.0</utils.version>
+        <thumbnailator.version>0.4.8</thumbnailator.version>
+        <lombok.version>1.16.10</lombok.version>
+
+        <!-- Other Project Version -->
+        <uums-cas.version>4.2.9</uums-cas.version>
+        <umcs.version>0.0.1-SNAPSHOT</umcs.version>
+        <uap.version>1.0.0</uap.version>
+
+        <!-- Plugin Versions -->
+        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
+        <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
+        <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
+
+        <!-- Project configuration -->
+        <project.encoding>UTF-8</project.encoding>
+        <java.version>1.7</java.version>
+    </properties>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>http://192.168.17.183:8081/nexus/content/repositories/releases/</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://192.168.17.183:8081/nexus/content/repositories/snapshots/</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
+    <dependencies>
+        <!-- logger dependency support start -->
+        <!-- slf4j api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <!-- logger dependency support end -->
+
+        <!-- Mocking Library -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+
+        <!-- Spring Frameworks -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <!-- junit test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <!-- logger dependency support start -->
+            <!-- slf4j api -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <!-- jdk-logging to slf4j bridge -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!-- commons-logging to slf4j bridge -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!-- logback support -->
+            <dependency>
+                <groupId>org.logback-extensions</groupId>
+                <artifactId>logback-ext-spring</artifactId>
+                <version>${logback-ext-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <!-- commons logging -->
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
+            </dependency>
+            <!-- logger dependency support end -->
+
+            <!-- apache commons util start -->
+            <!-- Commons Lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- Commons Collections -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+            <!-- Commons IO -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <!-- Commons Codec -->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+            <!-- Commons Fileupload -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
+            <!-- Commons Net -->
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net.version}</version>
+            </dependency>
+            <!-- apache commons util end -->
+
+            <!-- Date and Time Utilities -->
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
+            </dependency>
+
+            <!-- Google Guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- Json Library -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- POI -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!-- Job Scheduling -->
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz-jobs</artifactId>
+                <version>${quartz.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${quartz.version}</version>
+            </dependency>
+
+            <!-- Http Support -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpcore.version}</version>
+            </dependency>
+
+            <!-- Aspect Oriented -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+
+            <!-- Spring Frameworks -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Spring Data Frameworks -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>${spring-data-redis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.session</groupId>
+                <artifactId>spring-session</artifactId>
+                <version>${spring-session.version}</version>
+            </dependency>
+
+            <!-- Zookeeper Library -->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>slf4j-log4j12</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>log4j</artifactId>
+                        <groupId>log4j</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+            </dependency>
+
+            <!-- Curator Support -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <!-- Dubbox Library -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>log4j</artifactId>
+                        <groupId>log4j</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- JDBC Support -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- Object/Relational Mapping -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <!-- Redis Clients -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wandoulabs.jodis</groupId>
+                <artifactId>jodis</artifactId>
+                <version>${jodis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <!-- XML Processing -->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+
+            <!-- axis -->
+            <dependency>
+                <groupId>axis</groupId>
+                <artifactId>axis</artifactId>
+                <version>${axis.version}</version>
+            </dependency>
+
+            <!-- SSO Support -->
+            <dependency>
+                <groupId>org.jasig.cas.client</groupId>
+                <artifactId>cas-client-core</artifactId>
+                <version>${cas.client.version}</version>
+            </dependency>
+
+            <!-- Java Specifications -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Mocking Library -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Junit Test -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!--Google tghumbnailator-->
+            <dependency>
+                <groupId>net.coobird</groupId>
+                <artifactId>thumbnailator</artifactId>
+                <version>${thumbnailator.version}</version>
+            </dependency>
+
+            <!-- UAP Project Framework Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>uap-framework</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <!-- UAP Project Framework End -->
+
+            <!-- UAP Project Menu Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>menu-support</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>menu-interface</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <!-- UAP Project Menu End -->
+
+            <!-- UAP Project Log Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>log-support</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>log-interface</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <!-- UAP Project Log End -->
+
+            <!-- UAP Project Message Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>message-support</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <!-- UAP Project Message End -->
+
+            <!-- UAP Project Custom Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>custom-support</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>custom-interface</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <!-- UAP Project Custom End -->
+
+            <!-- UAP Project Admin Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>admin-support</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>admin-interface</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <!-- UAP Project Admin End -->
+
+            <!-- UAP Project selfhelp Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>selfhelp-support</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>selfhelp-interface</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+
+            <!-- UAP Project index Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>index-support</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>index-interface</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+
+            <!-- UAP Project index Start -->
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>workbench-support</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deppon.uap</groupId>
+                <artifactId>workbench-interface</artifactId>
+                <version>${uap.version}</version>
+            </dependency>
+
+            <!-- UUMS CAS Client Project Start -->
+            <dependency>
+                <groupId>org.jasig.cas</groupId>
+                <artifactId>uums-cas-client</artifactId>
+                <version>${uums-cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jasig.cas</groupId>
+                <artifactId>uums-cas-cachetimer</artifactId>
+                <version>${uums-cas.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.struts.xwork</groupId>
+                        <artifactId>xwork-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- UUMS CAS Client Project End -->
+
+            <!-- UMCS Dubbo Client Start -->
+            <dependency>
+                <groupId>com.deppon.umc</groupId>
+                <artifactId>umcs-obtain-syn</artifactId>
+                <version>${umcs.version}</version>
+            </dependency>
+            <!-- UMCS Dubbo Client End -->
+
+            <!-- RocketMQ -->
+            <dependency>
+                <groupId>com.deppon.dpboot</groupId>
+                <artifactId>dpboot-utils-serializer</artifactId>
+                <version>${utils.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.caucho</groupId>
+                        <artifactId>hessian</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-lang3</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-codec</groupId>
+                        <artifactId>commons-codec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.javassist</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.deppon.dpboot</groupId>
+                <artifactId>dpboot-mq-client</artifactId>
+                <version>${mq.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.caucho</groupId>
+                        <artifactId>hessian</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-lang3</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-codec</groupId>
+                        <artifactId>commons-codec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.javassist</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <meminitial>512m</meminitial>
+                        <maxmem>1024m</maxmem>
+                        <fork>true</fork>
+                        <encoding>${project.encoding}</encoding>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>default-testCompile</id>
+                            <phase>test-compile</phase>
+                            <goals>
+                                <goal>testCompile</goal>
+                            </goals>
+                            <configuration>
+                                <skip>false</skip>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                    <configuration>
+                        <encoding>${project.encoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <configuration>
+                        <encoding>${project.encoding}</encoding>
+                        <attach>true</attach>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <configuration>
+                        <encoding>${project.encoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>tests</id>
+                            <goals>
+                                <goal>test-jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin.version}</version>
+                    <configuration>
+                        <warName>uap-${project.artifactId}</warName>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>${tomcat7-maven-plugin.version}</version>
+                    <configuration>
+                        <path>/uap-${project.artifactId}</path>
+                        <uriEncoding>${project.encoding}</uriEncoding>
+                    </configuration>
+                </plugin>
+
+                <!-- Sonar -->
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonar-maven-plugin.version}</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
