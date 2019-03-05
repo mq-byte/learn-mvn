@@ -67,6 +67,7 @@ Maven生命周期就是为了对所有的构建过程进行抽象和统一。
 3. Site： 生成项目报告，站点，发布站点。 
 
 ## maven插件
+1. 默认插件
 | plugin | function | life cycle phase |
 | ------ | ------ | ------ |
 | maven-clean-plugin | 清理target文件 | clean |
@@ -78,12 +79,8 @@ Maven生命周期就是为了对所有的构建过程进行抽象和统一。
 | maven-deploy-plugin | 发布 jar | deploy |
 | maven-site-plugin | 生成文档 | site |
 
-		
-		
-	处理资源文件	
-	编译Java代码	
-	执行单元测试文件	test
-maven-jar-plugin	创建 jar	package
-maven-install-plugin	拷贝jar到本地的maven仓库 .m2/repository 下面	install
-maven-deploy-plugin	发布 jar	deploy
-maven-site-plugin	生成文档	site
+2. 常用插件
+- Tomcat插件
+- ...
+
+未完待续
