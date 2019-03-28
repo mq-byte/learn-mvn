@@ -29,9 +29,9 @@ ProjectName
   -|---|---java        —— 存放项目的.java文件  
   -|---|---resources   —— 存放项目资源文件，如spring,   hibernate配置文件  
   -|---test  
-  -|------java        ——存放所有测试.java文件，如JUnit测试类  
-  -|------resources   —— 测试资源文件  
-  -resources   —— 测试资源文件  
+  -|---|---java        ——存放所有测试.java文件，如JUnit测试类  
+  -|---|---resources   —— 测试资源文件  
+  -|---resources   —— 测试资源文件  
   -target             —— 目标文件输出位置例如.class、.jar、.war文件  
   -pom.xml           ——maven项目核心配置文件  
 
